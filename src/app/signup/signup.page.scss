@@ -1,0 +1,20 @@
+.app-logo{
+    width: 100px;
+}
+ion-toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --padding-start: 20px;
+    --padding-end: 20px;    
+    --padding-top: 70px;
+}
+ion-button{
+    --background: linear-gradient(90deg,rgb(3, 97, 184,1) 40%, rgba(3, 184, 145) 100%);
+}
+.popover-item{
+--padding-start:20px
+--padding-end:20px
+--padding-top:20px
+--padding-bottom:20px    
+}

@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar>
+    
+    <ion-title slot="start">
+      <img src="../../assets/images/logo.png" class="app-logo">
+    </ion-title>
+
+    
+    <ion-button id="context-menu-trigger" style="border-radius: 30px;" slot="end">
+      <ion-icon name="globe-outline" slot="start" style="font-size: 27px;"></ion-icon>
+      Language
+    </ion-button>
+    <ion-popover trigger="context-menu-trigger" triggerAction="click">
+      <ng-template>
+        <ion-list class="popover-list">
+          <ion-item class="popover-item">English</ion-item>
+          <ion-item class="popover-item">پــښـــتــو</ion-item>
+          <ion-item class="popover-item">دری</ion-item>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form action="">
+    <div class="form-content">
+      <h3>Sign Up</h3>
+      <p>Enter your mobile number to get started and access exclusive features.</p>
+    </div>
+    <div class="form-container">
+      
+    </div>
+  </form>
+</ion-content>

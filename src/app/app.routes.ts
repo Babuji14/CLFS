@@ -6,8 +6,11 @@ export const routes: Routes = [
     loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
   },
   {
+    path: 'signup',
+    loadComponent: () => import('./signup/signup.page').then( m => m.SignupPage)
+  },{
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'signup',
     pathMatch: 'full',
   },
 ];

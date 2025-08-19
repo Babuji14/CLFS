@@ -1,0 +1,67 @@
+.backward-icon{
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ccc;
+    color: #fff;
+}
+.header-content h1{
+    font-size: 30px;
+    font-weight: 1000;
+    text-align: center;
+}
+#form-container{
+    width: 100%;
+    height: 77vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+ion-label{
+    color: #1a3dec;
+    font-size: 18px;
+    font-weight: 800;
+}
+.name-field, .account-type, .status, .dob{
+    display: flex;
+    gap: 10px;
+}
+ion-input{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    --padding-start: 10px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ion-input {
+  --highlight-color-focused: transparent !important;
+  --highlight-color: transparent !important;
+  --border-width: 0 !important;
+  --box-shadow: none !important;
+}
+.submit-button{
+    text-transform: capitalize;
+    font-size: 18px;
+    --padding-start: 40px;    
+    --padding-end : 40px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    --background:linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%);
+    --border-radius: 40px;
+    color: #fff;
+}
+.col-content{
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+    color: #9b9a9a;
+}
+.privacy{
+    display: flex;
+    gap: 10px;
+    font-size: 17px;
+}

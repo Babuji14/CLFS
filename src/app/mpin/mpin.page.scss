@@ -1,0 +1,116 @@
+.backward-icon{
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ccc;
+    color: #fff;
+}
+.header-content{
+    width: 70%;
+}
+.header-content h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px
+}
+.header-content p{
+    text-align: left;
+    font-size: 16px;
+    color:#3a3939;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ion-input{
+    margin-left: 10px;
+    height: 70px;
+    width: 70px;
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center  ;
+    background: #1a3dec;
+    color: #000;
+    position: relative;
+    color: #fff;
+}
+ion-input::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+}
+ion-input {
+  --highlight-color-focused: transparent !important;
+  --highlight-color: transparent !important;
+  --border-width: 0 !important;
+  --box-shadow: none !important;
+}
+.otp-form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.otp-input{
+    display: flex;
+}
+.submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.submit a{
+    color:#3a3939 ;
+}
+ion-button.submit-btn{
+    text-transform: capitalize;
+    font-size: 18px;
+    --padding-start: 70px;    
+    --padding-end : 70px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    --background:linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%);
+    --border-radius: 40px;
+    color: #fff;
+}
+#input-number{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 180px;
+}
+.grid-container{
+    width: 400px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%);
+    border-radius: 10px;
+    padding: 20px;
+}
+ion-col{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ion-button{
+    --background:#fff;
+    --color: #0361b8 ;
+    font-size: 25px;
+    font-weight: 600;
+    --padding-start: 50px;    
+    --padding-end : 50px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+}

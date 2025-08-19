@@ -1,20 +1,178 @@
-.app-logo{
-    width: 100px;
+/* Logo */
+.app-logo {
+    height: 8vh;              /* relative to screen height */
+    width: auto;              /* auto to keep ratio */
+    max-width: 40vw;          /* won’t exceed 40% of screen width */
 }
-ion-toolbar{
+
+/* Toolbar */
+ion-toolbar {
     display: flex;
-    justify-content: center;
     align-items: center;
-    --padding-start: 20px;
-    --padding-end: 20px;    
-    --padding-top: 70px;
+    justify-content: space-between; /* auto spacing */
+    padding: 0 5vw;                /* responsive padding */
 }
-ion-button{
-    --background: linear-gradient(90deg,rgb(3, 97, 184,1) 40%, rgba(3, 184, 145) 100%);
+
+/* Language Button */
+.lang-btn {
+    --background: linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%);
+    font-size: 0.9rem;   /* scalable font */
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
 }
-.popover-item{
---padding-start:20px
---padding-end:20px
---padding-top:20px
---padding-bottom:20px    
+
+/* Popover */
+.popover-list {
+    width: 70vw;   /* flexible width */
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.popover-item {
+    --background: #f1f1f1;
+    width: 60%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+/* Form */
+.form-content {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.form-content h3 {
+    color: #0054e9;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* Phone Container */
+.phone-container {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+    gap: 0.5rem;
+}
+.flag-icon {
+    width: 8vw;
+    height: 8vw;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+.country-select,
+.phone-input {
+    border-radius: 8px;
+    padding: 0.6rem;
+    flex: 1;
+    font-size: 1rem;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%) border-box;
+}
+.country-code {
+    font-weight: 600;
+}
+
+/* Continue Button */
+.continue-btn {
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 0.8rem 1rem;
+    flex: 1;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%) border-box;
+}
+
+/* Signup Form */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Forward Icon */
+.forward-icon {
+    margin-left: 0.5rem;
+    width: 6vw;
+    height: 6vw;
+    max-width: 25px;
+    max-height: 25px;
+    background: linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%);
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+/* Swiper */
+.swiper-container {
+  width: 100%;
+  height: 30vh;   /* relative height */
+}
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.swiper-slide img {
+  border-radius: 12px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid #ccc;
+  width: 25vw;
+  height: 25vw;
+  max-width: 120px;
+  max-height: 120px;
+}
+.swiper-slide-active img {
+  width: 30vw !important;
+  height: 40vw !important;
+  max-width: 150px !important;
+  max-height: 200px !important;
+  transform: scale(1.05);
+}
+
+/* Card */
+.icon-card {
+    width: 22vw;
+    height: 22vw;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+ion-card-content {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+}
+img.card-content {
+    width: 12vw;
+    height: 12vw;
+    max-width: 50px;
+    max-height: 50px;
+}
+ion-card-content p {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(3, 97, 184, 1) 40%, rgba(3, 184, 145, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

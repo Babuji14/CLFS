@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border header" [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="chevron-back-outline" class="backward-icon" (click)="toNavigate()" style="margin:10px 0 0 10px"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" id="form-container">
+  <div class="container">
+    <div class="header-content">
+      <h1>Create M-PIN</h1>
+      <p> Create a secure 4-digit PIN for logging into your account.</p>
+    </div>
+    <form id="otp-form" class="otp-form">
+      <div class="otp-input">
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+      </div>
+      <div id="input-number">
+        <ion-grid class="grid-container">
+          <ion-row class="grid-row">
+            <ion-col size="3">
+              <ion-button>1</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>2</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>3</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="grid-row">
+            <ion-col size="3">
+              <ion-button>4</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>5</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>6</ion-button>
+            </ion-col>
+          </ion-row>          
+          <ion-row class="grid-row">
+            <ion-col size="3">
+              <ion-button>7</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>8</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>9</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="grid-row">
+            <ion-col>
+              <ion-button (click)="toNavigate()">0</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </form>
+  </div>
+</ion-content>

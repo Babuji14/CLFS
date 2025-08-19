@@ -35,3 +35,10 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-datetime {
+  --background: #fff;   /* white background */
+  --color: #000;        /* black text */
+  --wheel-highlight-background: #e0e0e0;
+  --wheel-fade-background: transparent;
+}

@@ -1,36 +1,79 @@
 <ion-header class="ion-no-border" translucent="true">
   <ion-toolbar>
-    
-    <ion-title slot="start">
-      <img src="../../assets/images/logo.png" class="app-logo">
-    </ion-title>
+    <div slot="start" class="logo-container">
+      <img src="assets/images/logo.png" class="app-logo" />
+    </div>
 
-    
-    <ion-button id="context-menu-trigger" style="border-radius: 30px;" slot="end">
-      <ion-icon name="globe-outline" slot="start" style="font-size: 27px;"></ion-icon>
+    <ion-button id="lang-popover-btn" slot="end" size="small" class="lang-btn">
+      <ion-icon name="globe-outline" slot="start" ></ion-icon>
       Language
     </ion-button>
-    <ion-popover trigger="context-menu-trigger" triggerAction="click">
+
+    <ion-popover trigger="lang-popover-btn" triggerAction="click">
       <ng-template>
-        <ion-list class="popover-list">
-          <ion-item class="popover-item">English</ion-item>
-          <ion-item class="popover-item">پــښـــتــو</ion-item>
-          <ion-item class="popover-item">دری</ion-item>
-        </ion-list>
+        <ion-content>
+          <ion-list class="popover-list">
+            <ion-item button>English</ion-item>
+            <ion-item button>پــښـــتــو</ion-item>
+            <ion-item button>دری</ion-item>
+          </ion-list>
+        </ion-content>
       </ng-template>
     </ion-popover>
-
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form action="">
-    <div class="form-content">
-      <h3>Sign Up</h3>
-      <p>Enter your mobile number to get started and access exclusive features.</p>
+<ion-content class="ion-padding" id="form-container">
+
+  <div class="form-content">
+    <h3>Sign Up</h3>
+    <p>Enter your mobile number to get started and access exclusive features.</p>
+  </div>
+
+  <form id="signup-form" [formGroup]="phNo" class="signup-form" >
+    <div class="phone-container">
+      <ion-item class="country-select">
+        <img src="../../assets/images/logo.webp" alt="flag" class="flag-icon" />
+        <ion-label class="country-code" style="margin-left: 5px;">+93</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" class="phone-input">
+        <ion-input inputmode="numeric" formControlName="mobileNo" type="tel" placeholder="Enter Mobile Number"></ion-input>
+      </ion-item>
     </div>
-    <div class="form-container">
-      
-    </div>
+
+    <ion-button fill="clear" class="continue-btn" (click)="onSubmit()">
+      Continue
+      <ion-icon name="chevron-forward-outline" class="forward-icon"></ion-icon>
+    </ion-button>
   </form>
+
+  <!-- <swiper-container [slidesPerView]="3.2"  centered-slides="true" loop="true" space-between="10" class="custom-swiper">
+    <swiper-slide *ngFor="let slide of slides" class="custom-swiper">
+      <img [src]="slide.image" class="slider-img" />
+    </swiper-slide>
+  </swiper-container> -->
+<swiper-container [slidesPerView]="4.5" [loop]="true" class="swiper-container" >
+  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner2.jfif" class="last" alt="Slide 1"></swiper-slide>
+  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner1.jfif" class="side" alt="Slide 2"></swiper-slide>
+  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner.jfif" class="center" alt="Slide 3"></swiper-slide>
+  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner1.jfif" class="side" alt="Slide 4"></swiper-slide>
+  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner2.jfif" class="last" alt="Slide 5"></swiper-slide>
+</swiper-container>
+
+  
+<!-- Cards grid -->
+ 
+  <ion-grid>
+    <ion-row style="padding: 0 30px;">
+      <ion-col size="4" *ngFor="let item of menuItems">
+        <ion-card class="icon-card">
+          <ion-card-content>
+            <img [src]="item.icon" [alt]="item.title" class="card-content" />
+            <p>{{ item.title }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

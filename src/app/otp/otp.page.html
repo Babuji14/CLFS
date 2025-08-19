@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border header" [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="chevron-back-outline" class="backward-icon" (click)="navigate()" style="margin: 10px 0 0 10px ;"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" id="form-container">
+  <div class="container">
+    <div class="header-content">
+      <h1>Enter OTP</h1>
+      <p>Enter the 5-digit code we just sent to 0000000411 by <strong style="color: #000;">SMS</strong></p>
+    </div>
+    <form id="otp-form" class="otp-form">
+      <div class="otp-input">
+        <ion-input type="number" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="number" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="number" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="number" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="number" inputmode="numeric" maxlength="1"></ion-input>
+      </div>
+      <div class="submit">
+        <a href="" style="margin: 10px 0;"> Didn't Receive Code?</a>
+        <ion-button class="submit-btn" fill="solid" expand="block" (click)="onClick()">
+          Continue
+        </ion-button>
+      </div>
+      <div id="input-number">
+        <ion-grid class="grid-container">
+          <ion-row class="grid-row">
+            <ion-col size="3">
+              <ion-button>1</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>2</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>3</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="grid-row">
+            <ion-col size="3">
+              <ion-button>4</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>5</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>6</ion-button>
+            </ion-col>
+          </ion-row>          
+          <ion-row class="grid-row">
+            <ion-col size="3">
+              <ion-button>7</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>8</ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button>9</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="grid-row">
+            <ion-col>
+              <ion-button>0</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </form>
+  </div>
+</ion-content>

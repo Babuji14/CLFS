@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border header" [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">Login with Pin/Biometric</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding"  id="form-container">
+  <div id="form-container">
+    <form class="form-container">
+      <div class="pin-input">
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+        <ion-input type="password" inputmode="numeric" maxlength="1"></ion-input>
+      </div>
+      <div class="biometric">
+        <img src="../../assets/images/biometric.webp" alt="biometric.png" [routerLink]="['/dashboard']">
+      </div>
+    </form>
+    <!--Slider-->
+    <swiper-container [slidesPerView]="4.5" [loop]="true" [spaceBetween]="10" [centeredSlides]="true" class="swiper-container" >
+      <swiper-slide class="swiper-slide last"><img src="../../assets/images/banner2.jfif" alt="Slide 1" style="height: 100px; width: 120px;"></swiper-slide>
+      <swiper-slide class="swiper-slide side"><img src="../../assets/images/banner1.jfif" alt="Slide 2" style="height: 130px; width: 150px;"></swiper-slide>
+      <swiper-slide class="swiper-slide center"><img src="../../assets/images/banner.jfif" alt="Slide 3" style="height: 180px; width: 200px;"></swiper-slide>
+      <swiper-slide class="swiper-slide side"><img src="../../assets/images/banner1.jfif" alt="Slide 4" style="height: 130px; width: 150px;"></swiper-slide>
+      <swiper-slide class="swiper-slide last"><img src="../../assets/images/banner2.jfif" alt="Slide 5" style="height: 100px; width: 120px;"></swiper-slide>
+    </swiper-container>
+    <!-- Cards grid -->
+    <ion-grid>
+      <ion-row style="padding: 0 20px;">
+        <ion-col size="4" *ngFor="let item of menuItems">
+          <ion-card class="icon-card">
+            <ion-card-content>
+              <img [src]="item.icon" [alt]="item.title" class="card-content" />
+              <p>{{ item.title }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

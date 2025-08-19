@@ -13,4 +13,24 @@ export const routes: Routes = [
     redirectTo: 'signup',
     pathMatch: 'full',
   },
+  {
+    path: 'otp',
+    loadComponent: () => import('./otp/otp.page').then( m => m.OtpPage)
+  },
+  {
+    path: 'mpin',
+    loadComponent: () => import('./mpin/mpin.page').then( m => m.MpinPage)
+  },
+  {
+    path: 'details',
+    loadComponent: () => import('./details/details.page').then( m => m.DetailsPage)
+  },
+  {
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.page').then( m => m.DashboardPage)
+  },
 ];

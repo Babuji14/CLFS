@@ -1,0 +1,120 @@
+<ion-header class="ion-no-border header" [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="chevron-back-outline" class="backward-icon" (click)="toNavigate()" style="margin: 10px 0 0 10px;"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="container">
+    <div class="header-content">
+      <h1>Get Started</h1>
+    </div>
+    <form id="form-container">
+      <div class="name-field">
+        <div class="col">
+          <ion-label>First Name</ion-label> 
+          <ion-input type="text" placeholder="Shah Jahan" required></ion-input>
+        </div>
+        <div class="col">
+          <ion-label>Last Name</ion-label>
+          <ion-input type="text" placeholder="Sangeen" required></ion-input>
+        </div>
+      </div>
+      <div class="dob">
+        <div class="col">
+          <ion-label>Father Name</ion-label>
+          <ion-input type="text" placeholder=" Murad Khan" required></ion-input>
+        </div>
+        <div class="col">
+            <ion-label>Date of Birth</ion-label>
+            <ion-input id="dob-popover" placeholder="Select Date of Birth" [value]="dob | date:'dd-MMM-yyyy'" readonly></ion-input>
+          <ion-popover trigger="dob-popover" triggerAction="click">
+            <ng-template>
+              <ion-datetime [value]="dob" preferWheel="true" presentation="date" (ionChange)="setDob($event)"></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </div>
+      </div>
+      <div class="status">
+        <div class="col">
+          <ion-label>Marital Status</ion-label>
+          <ion-input placeholder="Select Marital Status" id="marital-popover-btn" readonly [value]="selectedMaritalStatus" required></ion-input>
+          <ion-popover trigger="marital-popover-btn" triggerAction="click">
+            <ng-template>
+              <ion-content>
+                <ion-list>
+                  <ion-item button (click)="selectMaritalStatus('Single')">
+                    <ion-label>Single</ion-label>
+                    <ion-icon *ngIf="selectedMaritalStatus === 'Single'" name="checkmark-circle" color="primary" slot="end"></ion-icon>
+                  </ion-item>
+
+                  <ion-item button (click)="selectMaritalStatus('Engaged')">
+                    <ion-label>Engaged</ion-label>
+                    <ion-icon *ngIf="selectedMaritalStatus === 'Engaged'" name="checkmark-circle" color="primary" slot="end"></ion-icon>
+                  </ion-item>
+
+                  <ion-item button (click)="selectMaritalStatus('Married')">
+                    <ion-label>Married</ion-label>
+                    <ion-icon *ngIf="selectedMaritalStatus === 'Married'" name="checkmark-circle" color="primary" slot="end"></ion-icon>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+        </div>
+
+        <div class="col">
+          <ion-label>Gender</ion-label>
+          <ion-input placeholder="Select Your Gender" id="gender-popover-btn" readonly [value]="selectedGender" required></ion-input>
+          <ion-popover trigger="gender-popover-btn" triggerAction="click">
+            <ng-template>
+              <ion-content>
+                <ion-list>
+                  <ion-item button (click)="selectGender('Male')">
+                    <ion-label>Male</ion-label>
+                    <ion-icon *ngIf="selectedGender === 'Male'" name="checkmark-circle" color="primary" slot="end"></ion-icon>
+                  </ion-item>
+
+                  <ion-item button (click)="selectGender('Female')">
+                    <ion-label>Female</ion-label>
+                    <ion-icon *ngIf="selectedGender === 'Female'" name="checkmark-circle" color="primary" slot="end"></ion-icon>
+                  </ion-item>
+
+                  <ion-item button (click)="selectGender('Others')">
+                    <ion-label>Others</ion-label>
+                    <ion-icon *ngIf="selectedGender === 'Others'" name="checkmark-circle" color="primary" slot="end"></ion-icon>
+                  </ion-item>
+                </ion-list>
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+        </div>
+      </div>
+
+      <div class="mail">
+        <div class="col">
+          <ion-label>Email</ion-label>
+          <ion-input type="email" placeholder="creativespecialist@cashlink.com" required style="border-radius: 20px;"></ion-input>
+        </div>
+      </div>
+
+      <div class="account-type">
+        <div class="col">
+          <ion-label>Account Type</ion-label> 
+          <div class="col-content">
+            <span>Individual</span>
+            <ion-checkbox class="account-type-checkbox" [checked]="selectedAccountType === 'Individual'" (ionChange)="onAccountTypeChange('Individual')"></ion-checkbox>
+            <span>Corporate</span>
+            <ion-checkbox class="account-type-checkbox" [checked]="selectedAccountType === 'Corporate'" (ionChange)="onAccountTypeChange('Corporate')"></ion-checkbox>
+          </div>
+        </div>
+      </div>
+
+      <div class="privacy">
+        <ion-checkbox class="privacy-checkbox" value="agree" required size=""></ion-checkbox>
+        <span> <strong>By continuing,</strong> you agree to our <strong>Terms</strong> of <strong>Service and Privacy Notice</strong> on how we handle your data</span>
+      </div>
+      <ion-button class="submit-button" type="submit" (click)="onClick()">Proceed</ion-button>
+    </form>
+  </div>
+</ion-content>

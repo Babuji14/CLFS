@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { globeOutline, arrowForward, chevronForwardOutline } from 'ionicons/icons';
 import { IonContent,IonLabel, IonHeader,IonCard, IonToolbar, IonButton, IonIcon, IonCardContent, IonItem, IonList, IonPopover, IonInput, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { HttpClientModule } from '@angular/common/http';
+import { TranslateService } from '../Service/translate-service';
+import { TranslatePipe } from '../Pipe/translate-pipe';
 
 @Component({
   selector: 'app-signup',
@@ -13,15 +16,17 @@ import { IonContent,IonLabel, IonHeader,IonCard, IonToolbar, IonButton, IonIcon,
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
   standalone: true,
-  imports: [IonCard, IonCardContent, IonGrid, IonRow, IonCol, IonPopover,IonLabel, IonInput, IonItem, IonButton, IonContent, IonHeader, IonToolbar, IonIcon, IonList, CommonModule, FormsModule,ReactiveFormsModule]
+  imports: [IonCard, IonCardContent, IonGrid, IonRow, IonCol, IonPopover, IonLabel, IonInput, IonItem, IonButton, IonContent, IonHeader, IonToolbar, IonIcon, IonList, CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, TranslatePipe]
 })
 export class SignupPage implements OnInit {
-  constructor(private router: Router) { 
+Sign: any;
+  constructor(private router: Router, private langService:TranslateService, private translatePipe: TranslatePipe) { 
     addIcons({globeOutline,chevronForwardOutline,arrowForward});
   }
 
-  ngOnInit() {
-  }
+ngOnInit() {
+}
+
   
   menuItems = [
     { icon: '../../assets/images/islamic.png', title: 'Islamic' },
@@ -30,6 +35,7 @@ export class SignupPage implements OnInit {
     { icon: '../../assets/images/bestplaces.png', title: 'Best Places' },
     { icon: '../../assets/images/socialmessgae.png', title: 'Social Message' },
     { icon: '../../assets/images/exchange.png', title: 'Exchange Rates' },
+    
   ];
 
 //   slides = [
@@ -50,4 +56,17 @@ export class SignupPage implements OnInit {
       
     }
   }
+  switch(lang :string){
+    if(lang=='en'){
+      document.documentElement.setAttribute('dir', 'ltr');
+    }else if(lang=='ps'){
+      document.documentElement.setAttribute('dir', 'rtl');
+      // this.langService.loadLanguage(lang);
+      this.translatePipe.setLanguage(lang);
+    }else{
+      // this.langService.loadLanguage(lang);
+      this.translatePipe.setLanguage(lang);
+    }
+  }
+
 }

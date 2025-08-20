@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border" translucent="true">
-  <ion-toolbar>
+  <ion-toolbar style="padding-top: 30px;">
     <div slot="start" class="logo-container">
       <img src="assets/images/logo.png" class="app-logo" />
     </div>
@@ -13,9 +13,9 @@
       <ng-template>
         <ion-content>
           <ion-list class="popover-list">
-            <ion-item button>English</ion-item>
-            <ion-item button>پــښـــتــو</ion-item>
-            <ion-item button>دری</ion-item>
+            <ion-item button (click)="switch('en')">English</ion-item>
+            <ion-item button (click)="switch('ps')">پــښـــتــو</ion-item>
+            <ion-item button (click)="switch('fa')">دری</ion-item>
           </ion-list>
         </ion-content>
       </ng-template>
@@ -24,9 +24,11 @@
 </ion-header>
 
 <ion-content class="ion-padding" id="form-container">
+  <div id="form-container">
 
+  </div>
   <div class="form-content">
-    <h3>Sign Up</h3>
+    <h3>{{ 'Sign Up' | translate }}</h3>
     <p>Enter your mobile number to get started and access exclusive features.</p>
   </div>
 
@@ -53,17 +55,24 @@
       <img [src]="slide.image" class="slider-img" />
     </swiper-slide>
   </swiper-container> -->
-<swiper-container [slidesPerView]="4.5" [loop]="true" class="swiper-container" >
-  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner2.jfif" class="last" alt="Slide 1"></swiper-slide>
-  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner1.jfif" class="side" alt="Slide 2"></swiper-slide>
-  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner.jfif" class="center" alt="Slide 3"></swiper-slide>
-  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner1.jfif" class="side" alt="Slide 4"></swiper-slide>
-  <swiper-slide class="swiper-slide"><img src="../../assets/images/banner2.jfif" class="last" alt="Slide 5"></swiper-slide>
+<swiper-container
+  effect="coverflow"
+  grab-cursor="true"
+  centered-slides="true"
+  slides-per-view="auto"
+  loop="true"
+  coverflow-effect='{"rotate":0,"stretch":0,"depth":100,"modifier":2.5,"slideShadows":false}'
+  class="mySwiper"
+  space-between="10"
+  autoplay="true"
+>
+  <swiper-slide><img src="../../assets/images/last.png" alt="Image 1" /></swiper-slide>
+  <swiper-slide><img src="../../assets/images/center.png" alt="Image 2" /></swiper-slide>
+  <swiper-slide><img src="../../assets/images/side.png" alt="Image 3" /></swiper-slide>
 </swiper-container>
 
-  
+
 <!-- Cards grid -->
- 
   <ion-grid>
     <ion-row style="padding: 0 30px;">
       <ion-col size="4" *ngFor="let item of menuItems">

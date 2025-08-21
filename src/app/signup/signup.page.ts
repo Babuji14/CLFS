@@ -16,11 +16,11 @@ import { TranslatePipe } from '../Pipe/translate-pipe';
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
   standalone: true,
-  imports: [IonCard, IonCardContent, IonGrid, IonRow, IonCol, IonPopover, IonLabel, IonInput, IonItem, IonButton, IonContent, IonHeader, IonToolbar, IonIcon, IonList, CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, TranslatePipe]
+  imports: [IonCard, IonCardContent, IonPopover, IonLabel, IonInput, IonItem, IonButton, IonContent, IonHeader, IonToolbar, IonIcon, IonList, CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, TranslatePipe]
 })
 export class SignupPage implements OnInit {
-Sign: any;
-  constructor(private router: Router, private langService:TranslateService, private translatePipe: TranslatePipe) { 
+
+  constructor(private router: Router, private langService:TranslateService) { 
     addIcons({globeOutline,chevronForwardOutline,arrowForward});
   }
 
@@ -30,6 +30,7 @@ ngOnInit() {
   
   menuItems = [
     { icon: '../../assets/images/islamic.png', title: 'Islamic' },
+    // or this way to use translate title: this.langService.translate('Islamic')
     { icon: '../../assets/images/atm.png', title: 'Branch, ATM & Agent Locations' },
     { icon: '../../assets/images/discounts.png', title: 'Discounted Sites' },
     { icon: '../../assets/images/bestplaces.png', title: 'Best Places' },
@@ -56,17 +57,21 @@ ngOnInit() {
       
     }
   }
-  switch(lang :string){
-    if(lang=='en'){
-      document.documentElement.setAttribute('dir', 'ltr');
-    }else if(lang=='ps'){
-      document.documentElement.setAttribute('dir', 'rtl');
-      // this.langService.loadLanguage(lang);
-      this.translatePipe.setLanguage(lang);
-    }else{
-      // this.langService.loadLanguage(lang);
-      this.translatePipe.setLanguage(lang);
-    }
-  }
+  // switch(lang :string){
+  //   if(lang=='en'){
+  //     document.documentElement.setAttribute('dir', 'ltr');
+  //   }else if(lang=='ps'){
+  //     document.documentElement.setAttribute('dir', 'rtl');
+  //     // this.langService.loadLanguage(lang);
+  //     // this.translatePipe.setLanguage(lang);
+  //   }else{
+  //     // this.langService.loadLanguage(lang);
+  //     // this.translatePipe.setLanguage(lang);
+  //   }
 
+  switch(lang: string) {
+    const dir = (lang === 'en') ? 'ltr' : 'rtl';
+    document.documentElement.setAttribute('dir', dir);
+    this.langService.setLanguage(lang);
+  }
 }

@@ -1,21 +1,21 @@
 <ion-header class="ion-no-border" translucent="true">
-  <ion-toolbar style="padding-top: 30px;">
+  <ion-toolbar style="padding-top: 40px;">
     <div slot="start" class="logo-container">
       <img src="assets/images/logo.png" class="app-logo" />
     </div>
 
     <ion-button id="lang-popover-btn" slot="end" size="small" class="lang-btn">
       <ion-icon name="globe-outline" slot="start" ></ion-icon>
-      Language
+      {{'Language' | translate}}
     </ion-button>
 
-    <ion-popover trigger="lang-popover-btn" triggerAction="click">
+    <ion-popover trigger="lang-popover-btn" triggerAction="click" >
       <ng-template>
         <ion-content>
           <ion-list class="popover-list">
-            <ion-item button (click)="switch('en')">English</ion-item>
-            <ion-item button (click)="switch('ps')">پــښـــتــو</ion-item>
-            <ion-item button (click)="switch('fa')">دری</ion-item>
+            <ion-item class="popover-item" button (click)="switch('en')">English</ion-item>
+            <ion-item class="popover-item" button (click)="switch('ps')">پــښـــتــو</ion-item>
+            <ion-item class="popover-item"  button (click)="switch('fa')">دری</ion-item>
           </ion-list>
         </ion-content>
       </ng-template>
@@ -23,66 +23,56 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" id="form-container">
+<ion-content >
   <div id="form-container">
-
-  </div>
-  <div class="form-content">
-    <h3>{{ 'Sign Up' | translate }}</h3>
-    <p>Enter your mobile number to get started and access exclusive features.</p>
-  </div>
-
-  <form id="signup-form" [formGroup]="phNo" class="signup-form" >
-    <div class="phone-container">
-      <ion-item class="country-select">
-        <img src="../../assets/images/logo.webp" alt="flag" class="flag-icon" />
-        <ion-label class="country-code" style="margin-left: 5px;">+93</ion-label>
-      </ion-item>
-
-      <ion-item lines="none" class="phone-input">
-        <ion-input inputmode="numeric" formControlName="mobileNo" type="tel" placeholder="Enter Mobile Number"></ion-input>
-      </ion-item>
+    
+    <div class="form-content">
+      <h3>{{ 'Sign Up' | translate }}</h3>
+      <ion-text>{{'Enter your mobile number to get started and access exclusive features.' | translate}}</ion-text>
     </div>
 
-    <ion-button fill="clear" class="continue-btn" (click)="onSubmit()">
-      Continue
-      <ion-icon name="chevron-forward-outline" class="forward-icon"></ion-icon>
-    </ion-button>
-  </form>
+    <form id="signup-form" [formGroup]="phNo" class="signup-form" >
+      <div class="phone-container">
+        <ion-item class="country-select">
+          <img src="../../assets/images/logo.webp" alt="flag" class="flag-icon" />
+          <ion-label class="country-code" style="margin-left: 5px;">+93</ion-label>
+        </ion-item>
 
-  <!-- <swiper-container [slidesPerView]="3.2"  centered-slides="true" loop="true" space-between="10" class="custom-swiper">
-    <swiper-slide *ngFor="let slide of slides" class="custom-swiper">
-      <img [src]="slide.image" class="slider-img" />
-    </swiper-slide>
-  </swiper-container> -->
-<swiper-container
-  effect="coverflow"
-  grab-cursor="true"
-  centered-slides="true"
-  slides-per-view="auto"
-  loop="true"
-  coverflow-effect='{"rotate":0,"stretch":0,"depth":100,"modifier":2.5,"slideShadows":false}'
-  class="mySwiper"
-  space-between="10"
-  autoplay="true"
->
-  <swiper-slide><img src="../../assets/images/last.png" alt="Image 1" /></swiper-slide>
-  <swiper-slide><img src="../../assets/images/center.png" alt="Image 2" /></swiper-slide>
-  <swiper-slide><img src="../../assets/images/side.png" alt="Image 3" /></swiper-slide>
-</swiper-container>
+        <ion-item lines="none" class="phone-input">
+          <ion-input inputmode="numeric" formControlName="mobileNo" type="tel" [placeholder]="'Enter Mobile Number' | translate"></ion-input>
+        </ion-item>
+      </div>
+
+      <ion-button fill="clear" class="continue-btn" (click)="onSubmit()">
+        {{'Continue'| translate}}
+        <ion-icon name="chevron-forward-outline" class="forward-icon"></ion-icon>
+      </ion-button>
+    </form>
+
+    <swiper-container
+      effect="coverflow"
+      grab-cursor="true"
+      centered-slides="true"
+      slides-per-view="auto"
+      loop="true"
+      coverflow-effect='{"rotate":0,"stretch":0,"depth":100,"modifier":2.5,"slideShadows":false}'
+      class="mySwiper"
+      autoplay='{"delay":200}'
+    >
+      <swiper-slide><img src="../../assets/images/last.png" alt="Image 1" /></swiper-slide>
+      <swiper-slide><img src="../../assets/images/center.png" alt="Image 2" /></swiper-slide>
+      <swiper-slide><img src="../../assets/images/side.png" alt="Image 3" /></swiper-slide>
+    </swiper-container>
 
 
-<!-- Cards grid -->
-  <ion-grid>
-    <ion-row style="padding: 0 30px;">
-      <ion-col size="4" *ngFor="let item of menuItems">
-        <ion-card class="icon-card">
-          <ion-card-content>
-            <img [src]="item.icon" [alt]="item.title" class="card-content" />
-            <p>{{ item.title }}</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <!-- Cards grid -->
+    <div class="icon-grid">
+      <ion-card class="icon-card" *ngFor="let item of menuItems">
+        <ion-card-content>
+          <img [src]="item.icon" [alt]="item.title" class="card-content" />
+          <ion-text>{{ item.title | translate }}</ion-text>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>

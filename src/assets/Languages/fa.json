@@ -1,12 +1,13 @@
 {
-    "LANGUAGE": "زبان",
-    "SIGNUP": "ثبت نام",
-    "ENTER YOUR MOBILE NUMBER TO GET STARTED AND ACCESS EXCLUSIVE FEATURES": "شماره موبایل خود را وارد کنید تا شروع کنید و به ویژگی‌های ویژه دسترسی پیدا کنید",
-    "ENTER MOBILE NUMBER": "شماره موبایل را وارد کنید",
-    "CONTINUE": "ادامه",
-    "ISLAMIC": "اسلامی",
-    "BRANCH ATM & AGENT": "شعبه، دستگاه خودپرداز و نماینده",
-    "BESTPLACES": "بهترین مکان‌ها",
-    "SOCIAL MESSAGE": "پیام اجتماعی",
-    "EXCHANGE RATES": "نرخ ارز"
+    "Language": "زبان",
+    "Sign Up": "ثبت نام",
+    "Enter your mobile number to get started and access exclusive features.": "شماره موبایل خود را وارد کنید تا شروع کنید و به ویژگی‌های ویژه دسترسی پیدا کنید",
+    "Enter Mobile Number": "شماره موبایل را وارد کنید",
+    "Continue": "ادامه",
+    "Islamic": "اسلامی",
+    "Branch, ATM & Agent Locations": "شعبه، دستگاه خودپرداز و نماینده",
+    "Discounted Sites":"نرخ ارز",
+    "Best Places": "بهترین مکان‌ها",
+    "Social Message": "پیام اجتماعی",
+    "Exchange Rates": "نرخ ارز"
 }

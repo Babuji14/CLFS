@@ -1,10 +1,10 @@
 <ion-header class="ion-no-border header" [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar style="margin-top: 70px;">
     <ion-title class="title">Login with Pin/Biometric</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding"  id="form-container">
+<ion-content [fullscreen]="true" id="form-container">
   <div id="form-container">
     <form class="form-container">
       <div class="pin-input">
@@ -18,25 +18,33 @@
       </div>
     </form>
     <!--Slider-->
-    <swiper-container [slidesPerView]="4.5" [loop]="true" [spaceBetween]="10" [centeredSlides]="true" class="swiper-container" >
-      <swiper-slide class="swiper-slide last"><img src="../../assets/images/banner2.jfif" alt="Slide 1" style="height: 100px; width: 120px;"></swiper-slide>
-      <swiper-slide class="swiper-slide side"><img src="../../assets/images/banner1.jfif" alt="Slide 2" style="height: 130px; width: 150px;"></swiper-slide>
-      <swiper-slide class="swiper-slide center"><img src="../../assets/images/banner.jfif" alt="Slide 3" style="height: 180px; width: 200px;"></swiper-slide>
-      <swiper-slide class="swiper-slide side"><img src="../../assets/images/banner1.jfif" alt="Slide 4" style="height: 130px; width: 150px;"></swiper-slide>
-      <swiper-slide class="swiper-slide last"><img src="../../assets/images/banner2.jfif" alt="Slide 5" style="height: 100px; width: 120px;"></swiper-slide>
+    <swiper-container
+      effect="coverflow"
+      grab-cursor="true"
+      centered-slides="true"
+      slides-per-view="auto"
+      loop="true"
+      coverflow-effect='{"rotate":0,"stretch":0,"depth":100,"modifier":2.5,"slideShadows":false}'
+      class="mySwiper"
+      autoplay='{"delay":200}'
+    >
+      <swiper-slide><img src="../../assets/images/last.png" alt="Image 1" /></swiper-slide>
+      <swiper-slide><img src="../../assets/images/center.png" alt="Image 2" /></swiper-slide>
+      <swiper-slide><img src="../../assets/images/side.png" alt="Image 3" /></swiper-slide>
     </swiper-container>
     <!-- Cards grid -->
-    <ion-grid>
-      <ion-row style="padding: 0 20px;">
-        <ion-col size="4" *ngFor="let item of menuItems">
-          <ion-card class="icon-card">
-            <ion-card-content>
-              <img [src]="item.icon" [alt]="item.title" class="card-content" />
-              <p>{{ item.title }}</p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <div class="icon-grid">
+      <ion-card class="icon-card" *ngFor="let item of menuItems">
+        <ion-card-content>
+          <img [src]="item.icon" [alt]="item.title" class="card-content" />
+          <ion-text>{{ item.title }}</ion-text>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="demo">
+      <ion-icon name="chevron-back-circle-outline"></ion-icon>
+        <ion-text>Demo</ion-text>
+      <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+    </div>
   </div>
 </ion-content>

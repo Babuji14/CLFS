@@ -1,9 +1,9 @@
 <ion-header class="ion-no-border" translucent="true">
-  <ion-toolbar>
+  <ion-toolbar style="padding-top: 40px;">
     <div slot="start" class="welcome-container">
       <img src="../../assets/icon/menu.png" class="menu-icon">
-      <h1>Welcome</h1>
-      <h2>Shah</h2>
+      <ion-text color="primary" style="font-weight: 600;font-size: 2rem;">Welcome</ion-text>
+      <ion-text color="primary" style="font-weight: 500; font-size: 1.5rem;">Shah</ion-text>
     </div>
     <div slot="end" class="logo-container">
       <img src="assets/images/logo.png" class="app-logo" />
@@ -11,11 +11,33 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-img">
+        <img src="../../assets/images/Profile.jpg" alt="profile.png">
+      </div>
+      <ion-card class="profile">
+        
+      </ion-card>
+    </div>
+
+    <div class="icon-grid">
+      <ion-card class="icon-card" *ngFor="let item of menuItems">
+        <ion-card-content>
+          <img [src]="item.icon" [alt]="item.title" class="card-content" />
+          <ion-text>{{ item.title }}</ion-text>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="banner">
+      <img src="../../assets/images/banner.jfif" alt="banner.png">
+      <img src="../../assets/images/banner.jfif" alt="banner.png">
+      <img src="../../assets/images/banner.jfif" alt="banner.png">
+    </div>
+  </div>
+  <ion-footer>
+    
+  </ion-footer>
 </ion-content>

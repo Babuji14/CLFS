@@ -1,14 +1,16 @@
 <ion-header class="ion-no-border header" [translucent]="true">
-  <ion-toolbar>
-    <ion-icon name="chevron-back-outline" class="backward-icon" (click)="navigate()" style="margin: 10px 0 0 10px ;"></ion-icon>
+  <ion-toolbar style="padding-top: 40px;">
+    <ion-icon name="chevron-back-outline" class="backward-icon" (click)="navigate()"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding" id="form-container">
+<ion-content [fullscreen]="true" id="form-container">
   <div class="container">
     <div class="header-content">
       <h1>Enter OTP</h1>
-      <p>Enter the 5-digit code we just sent to 0000000411 by <strong style="color: #000;">SMS</strong></p>
+      <p>
+        <ion-text>Enter the 5-digit code we just sent to 0000000411 by <strong style="color: #000;">SMS</strong></ion-text>
+      </p>
     </div>
     <form id="otp-form" class="otp-form">
       <div class="otp-input">

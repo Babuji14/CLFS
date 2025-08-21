@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonGrid, IonCol, IonCardContent, IonCard, IonRow, IonInput } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
-
+import { chevronForwardOutline, chevronBackCircleOutline, chevronForwardCircleOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   standalone: true,
-  imports: [IonInput, IonRow, IonCard, IonCardContent, IonCol, IonGrid, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink]
+  imports: [IonInput, IonCard, IonCardContent, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink]
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    addIcons({chevronBackCircleOutline,chevronForwardCircleOutline});
+  }
 
   ngOnInit() {
   }
